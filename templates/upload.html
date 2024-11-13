@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir PDF para Anonimización</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 40px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .file-input, .words-input {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Subir PDF para Anonimización</h2>
+        <form action="/anonimizar" method="post" enctype="multipart/form-data">
+            <div class="form-group file-input">
+                <label for="file">Seleccionar archivo PDF:</label>
+                <input type="file" class="form-control-file" id="file" name="file" accept=".pdf" required>
+            </div>
+            <div class="form-group words-input">
+                <label for="words">Palabras a anonimizar (separadas por comas):</label>
+                <input type="text" class="form-control" id="words" name="words" placeholder="Ejemplo: LUIS, BRAVO, AMAYA" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-custom">Subir y Anonimizar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
